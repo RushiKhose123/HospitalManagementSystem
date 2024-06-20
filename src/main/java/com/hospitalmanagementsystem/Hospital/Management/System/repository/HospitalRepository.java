@@ -17,4 +17,10 @@ public class HospitalRepository {
     public void addHospital(String id, Hospital hospital){
         hospitalDB.put(id, hospital);
     }
+
+    public Hospital getHospitalDetailById(int id){
+        String key = id + "";
+        Hospital hospital = hospitalDB.get(key);
+        return hospital;
+    }
 }

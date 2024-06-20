@@ -11,6 +11,17 @@ import java.util.List;
 @Service
 public class HospitalService {
 
+    // on our application when patient will come he will try to admit himself
+    // when he wants to admit himself in the portal so, he will provide his details
+    // like age, name, gender, disease
+    // so we will try to assign one hospital to that patient
+    // logic for assign hospital to the patient will be whichever hospital is having
+    // max no. of beds you will assign that hospital to patient
+
+    // we need to develop one endpoint such that a particular patient can register himself on our portal
+
+
+
     // to make spring understand this is service class we used @service annotation
     // in service class we write all our logic
 
@@ -35,5 +46,10 @@ public class HospitalService {
         // service layer wants to save this object in the system
         // service layer will call repository layer to save this object
         hospitalRepository.addHospital(id, hospital);
+    }
+
+    public Hospital getHospitalDetailById(int id){
+        // service layer need to call repository layer
+        return hospitalRepository.getHospitalDetailById(id);
     }
 }
