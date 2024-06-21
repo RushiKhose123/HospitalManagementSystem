@@ -2,6 +2,7 @@ package com.hospitalmanagementsystem.Hospital.Management.System.service;
 
 import com.hospitalmanagementsystem.Hospital.Management.System.model.Hospital;
 import com.hospitalmanagementsystem.Hospital.Management.System.repository.HospitalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,7 +30,8 @@ public class HospitalService {
     // of hospital repository inside hospital service
     // we have injected the dependency of hospital repository inside hospital service
 
-    HospitalRepository hospitalRepository = new HospitalRepository();
+    @Autowired
+    HospitalRepository hospitalRepository;
     public List<Hospital> getAllHospital(){
         // you needs hospitals data
         // service layer need to call repository layer

@@ -2,6 +2,7 @@ package com.hospitalmanagementsystem.Hospital.Management.System.controller;
 
 import com.hospitalmanagementsystem.Hospital.Management.System.model.Hospital;
 import com.hospitalmanagementsystem.Hospital.Management.System.service.HospitalService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,8 @@ public class HospitalController {
     // so we want to create url such that when user will hit that url user will be able to see all hospital details
 
 
-    HospitalService hospitalService = new HospitalService();
+    @Autowired
+    HospitalService hospitalService;
     @GetMapping("/api/hospitals")
     public List<Hospital> getAllHospital(){
         // to get list of all hospitals we need to write loigic
